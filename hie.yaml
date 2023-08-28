@@ -1,90 +1,190 @@
 cradle:
   cabal:
-    - path: "./codegen/src"
+    - path: "codegen/src"
       component: "lib:codegen"
-    - path: "./codegen/exe"
-      component: "exe:codegen-exe"
-    - path: "./codegen/test"
-      component: "spec:codegen"
 
-    - path: "./libtorch-ffi/src"
-      component: "lib:libtorch-ffi"
-    - path: "./libtorch-ffi/test"
-      component: "libtorch-ffi:test:spec"
+    - path: "codegen/exe/Main.hs"
+      component: "codegen:exe:codegen-exe"
 
-    - path: "./libtorch-ffi-helper/src"
-      component: "lib:libtorch-ffi-helper"
+    - path: "codegen/test"
+      component: "codegen:test:doctests"
 
-    - path: "./hasktorch/src"
+    - path: "codegen/test"
+      component: "codegen:test:spec"
+
+    - path: "examples/xor-mlp/Main.hs"
+      component: "examples:exe:xor-mlp"
+
+    - path: "examples/static-xor-mlp/Main.hs"
+      component: "examples:exe:static-xor-mlp"
+
+    - path: "examples/static-mnist"
+      component: "examples:lib:static-mnist"
+
+    - path: "examples/static-mnist-cnn/Main.hs"
+      component: "examples:exe:static-mnist-cnn"
+
+    - path: "examples/static-mnist-mlp/Main.hs"
+      component: "examples:exe:static-mnist-mlp"
+
+    - path: "examples/typed-transformer/Main.hs"
+      component: "examples:exe:typed-transformer"
+
+    - path: "examples/rnn/Main.hs"
+      component: "examples:exe:rnn"
+
+    - path: "examples/rnn/RecurrentLayer.hs"
+      component: "examples:exe:rnn"
+
+    - path: "examples/rnn/Elman.hs"
+      component: "examples:exe:rnn"
+
+    - path: "examples/rnn/LSTM.hs"
+      component: "examples:exe:rnn"
+
+    - path: "examples/rnn/GRU.hs"
+      component: "examples:exe:rnn"
+
+    - path: "examples/minimal-text-example/Hello.hs"
+      component: "examples:exe:minimal-text-example"
+
+    - path: "examples/rnn/Hello.hs"
+      component: "examples:exe:minimal-text-example"
+
+    - path: "examples/minimal-text-example/RecurrentLayer.hs"
+      component: "examples:exe:minimal-text-example"
+
+    - path: "examples/minimal-text-example/Elman.hs"
+      component: "examples:exe:minimal-text-example"
+
+    - path: "examples/minimal-text-example/LSTM.hs"
+      component: "examples:exe:minimal-text-example"
+
+    - path: "examples/minimal-text-example/GRU.hs"
+      component: "examples:exe:minimal-text-example"
+
+    - path: "examples/rnn/RecurrentLayer.hs"
+      component: "examples:exe:minimal-text-example"
+
+    - path: "examples/rnn/Elman.hs"
+      component: "examples:exe:minimal-text-example"
+
+    - path: "examples/rnn/LSTM.hs"
+      component: "examples:exe:minimal-text-example"
+
+    - path: "examples/rnn/GRU.hs"
+      component: "examples:exe:minimal-text-example"
+
+    - path: "examples/regression/Main.hs"
+      component: "examples:exe:regression"
+
+    - path: "examples/gaussian-process/Main.hs"
+      component: "examples:exe:gaussian-process"
+
+    - path: "examples/vae/Main.hs"
+      component: "examples:exe:vae"
+
+    - path: "examples/serialization/Main.hs"
+      component: "examples:exe:serialization"
+
+    - path: "examples/optimizers/Main.hs"
+      component: "examples:exe:optimizers"
+
+    - path: "examples/optimizers/TestFunctions.hs"
+      component: "examples:exe:optimizers"
+
+    - path: "examples/optimizers-cpp/Main.hs"
+      component: "examples:exe:optimizers-cpp"
+
+    - path: "examples/optimizers-cpp/TestFunctions.hs"
+      component: "examples:exe:optimizers-cpp"
+
+    - path: "examples/optimizers-cpp-typed/Main.hs"
+      component: "examples:exe:optimizers-cpp-typed"
+
+    - path: "examples/optimizers-cpp-typed/TestFunctions.hs"
+      component: "examples:exe:optimizers-cpp-typed"
+
+    - path: "examples/image-processing/Main.hs"
+      component: "examples:exe:image-processing"
+
+    - path: "examples/mnist-mlp/Main.hs"
+      component: "examples:exe:mnist-mlp"
+
+    - path: "examples/mnist-mixed-precision/Main.hs"
+      component: "examples:exe:mnist-mixed-precision"
+
+    - path: "examples/load-torchscript/Main.hs"
+      component: "examples:exe:load-torchscript"
+
+    - path: "examples/matrix-factorization/SparseRatingMatrix.hs"
+      component: "examples:exe:matrix-factorization"
+
+    - path: "examples/matrix-factorization/MF.hs"
+      component: "examples:exe:matrix-factorization"
+
+    - path: "examples/gd-field/Main.hs"
+      component: "examples:exe:gd-field"
+
+    - path: "examples/autograd/Main.hs"
+      component: "examples:exe:autograd"
+
+    - path: "examples/alexNet/Main.hs"
+      component: "examples:exe:alexNet"
+
+    - path: "examples/alexNet/AlexNet.hs"
+      component: "examples:exe:alexNet"
+
+    - path: "examples/distill/Main.hs"
+      component: "examples:exe:distill"
+
+    - path: "examples/distill/Distill.hs"
+      component: "examples:exe:distill"
+
+    - path: "examples/distill/Dataset.hs"
+      component: "examples:exe:distill"
+
+    - path: "examples/distill/Model.hs"
+      component: "examples:exe:distill"
+
+    - path: "examples/distill/Regularization.hs"
+      component: "examples:exe:regularization"
+
+    - path: "examples/distill/Distill.hs"
+      component: "examples:exe:regularization"
+
+    - path: "examples/distill/Dataset.hs"
+      component: "examples:exe:regularization"
+
+    - path: "examples/distill/Model.hs"
+      component: "examples:exe:regularization"
+
+    - path: "examples/distill/Plot.hs"
+      component: "examples:exe:regularization"
+
+    - path: "examples/iris-classification/Main.hs"
+      component: "examples:exe:iris-classification"
+
+    - path: "hasktorch/src"
       component: "lib:hasktorch"
-    - path: "./hasktorch/test"
+
+    - path: "hasktorch/test"
       component: "hasktorch:test:spec"
 
-    - path: "./examples/alexNet"
-      component: "exe:alexNet"
-    - path: "./examples/autograd"
-      component: "exe:autograd"
-    - path: "./examples/distill"
-      component: "exe:distill"
-    - path: "./examples/gaussian-process"
-      component: "exe:gaussian-process"
-    - path: "./examples/gd-field"
-      component: "exe:gd-field"
-    - path: "./examples/image-processing"
-      component: "exe:image-processing"
-    - path: "./examples/load-torchscript"
-      component: "exe:load-torchscript"
-    - path: "./examples/matrix-factorization"
-      component: "exe:matrix-factorization"
-    - path: "./examples/minimal-text-example"
-      component: "exe:minimal-text-example"
-    - path: "./examples/mnist-mlp"
-      component: "exe:mnist-mlp"
-    - path: "./examples/mnist-mixed-precision"
-      component: "exe:mnist-mixed-precision"
-    - path: "./examples/optimizers"
-      component: "exe:optimizers"
-    - path: "./examples/regression"
-      component: "exe:regression"
-    - path: "./examples/rnn"
-      component: "exe:rnn"
-    - path: "./examples/serialization"
-      component: "exe:serialization"
-    - path: "./examples/static-mnist"
-      component: "lib:static-mnist"
-    - path: "./examples/static-mnist-cnn"
-      component: "exe:static-mnist-cnn"
-    - path: "./examples/static-mnist-mlp"
-      component: "exe:static-mnist-mlp"
-    - path: "./examples/static-xor-mlp"
-      component: "exe:static-xor-mlp"
-    - path: "./examples/test"
-      component: "spec:examples"
-    - path: "./examples/typed-transformer"
-      component: "exe:typed-transformer"
-    - path: "./examples/vae"
-      component: "exe:vae"
-    - path: "./examples/xor-mlp"
-      component: "exe:xor-mlp"
-    - path: "./examples/csv-test"
-      component: "exe:csv-test"
-    - path: "./examples/iris-classification"
-      component: "exe:iris-classification"
+    - path: "hasktorch/test"
+      component: "hasktorch:test:doctests"
 
-    - path: "./experimental/bounding-box"
-      component: "exe:bounding-box"
-    - path: "./experimental/dataloader-cifar10"
-      component: "exe:dataloader-cifar10"
-    - path: "./experimental/untyped-nlp"
-      component: "exe:untyped-nlp"
+    - path: "hasktorch/bench/Runtime.hs"
+      component: "hasktorch:bench:runtime"
 
-    - path: "./experimental/gradually-typed/src"
-      component: "lib:hasktorch-gradually-typed"
-    - path: "./experimental/gradually-typed/test"
-      component: "hasktorch-gradually-typed:test:spec"
-    - path: "./experimental/gradually-typed/examples/linear-regression"
-      component: "hasktorch-gradually-typed:exe:linear-regression"
-    - path: "./experimental/gradually-typed/examples/two-layer-network"
-      component: "hasktorch-gradually-typed:exe:two-layer-network"
-    - path: "./experimental/gradually-typed/examples/neural-interpreter"
-      component: "hasktorch-gradually-typed:exe:neural-interpreter"
+    - path: "hasktorch/bench/Alloc.hs"
+      component: "hasktorch:bench:alloc"
+
+    - path: "libtorch-ffi/src"
+      component: "lib:libtorch-ffi"
+
+    - path: "libtorch-ffi/test"
+      component: "libtorch-ffi:test:spec"
+
+    - path: "libtorch-ffi-helper/src"
+      component: "lib:libtorch-ffi-helper"

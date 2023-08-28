@@ -23,6 +23,7 @@ import Control.Monad
   )
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Internal as BSI
+import qualified Foreign.Marshal.Utils as FMU
 import Data.Int
 import qualified Data.Vector.Storable as V
 import Data.Word
@@ -96,7 +97,7 @@ getImages' n dataDim mnist imageIdxs = unsafePerformIO $ do
   D.withTensor t $ \ptr1 -> do
     F.withForeignPtr fptr $ \ptr2 -> do
       forM_ (zip [0 .. (n -1)] imageIdxs) $ \(i, idx) -> do
-        BSI.memcpy
+        FMU.copyBytes
           (F.plusPtr ptr1 (dataDim * i))
           (F.plusPtr ptr2 (off + 16 + dataDim * idx))
           dataDim
@@ -403,7 +404,7 @@ drawChar ascii_code x0 y0 (r, g, b) (br, bg, bb) input = do
             { 0x38, 0x0C, 0x0C, 0x07, 0x0C, 0x0C, 0x38, 0x00},
             { 0x18, 0x18, 0x18, 0x00, 0x18, 0x18, 0x18, 0x00},
             { 0x07, 0x0C, 0x0C, 0x38, 0x0C, 0x0C, 0x07, 0x00},
-            { 0x6E, 0x3B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00} 
+            { 0x6E, 0x3B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}
           };
         for(int y=y0;y<y0+char_height;y++){
           for(int x=x0;x<x0+char_width;x++){
@@ -411,7 +412,7 @@ drawChar ascii_code x0 y0 (r, g, b) (br, bg, bb) input = do
                x >=0 && x < w) {
               int dx = x-x0;
               int dy = y-y0;
-              int bit = 
+              int bit =
                 ascii_code > 0x20 && ascii_code < 0x7f ?
                 fonts[ascii_code-0x20][dy] & (0x1 << dx) :
                 0;
@@ -542,7 +543,7 @@ fromDynImage image = unsafePerformIO $ case image of
         let (fptr, len) = V.unsafeToForeignPtr0 vec
             whc = width * height * channel * dtype_size
         F.withForeignPtr fptr $ \ptr2 -> do
-          BSI.memcpy (F.castPtr ptr1) (F.castPtr ptr2) whc
+          FMU.copyBytes (F.castPtr ptr1) (F.castPtr ptr2) whc
           return t
     createTensorU16to32 width height channel dtype vec = do
       t <- ((cast2 LibTorch.empty_lo) :: [Int] -> D.TensorOptions -> IO D.Tensor) [1, height, width, channel] $ D.withDType dtype D.defaultOpts
@@ -596,7 +597,7 @@ fromImages imgs = do
       when (height /= height') $ do
         throwIO $ userError "image's height is not the same as first image's one"
       F.withForeignPtr fptr $ \ptr2 -> do
-        BSI.memcpy (F.plusPtr (F.castPtr ptr1) (whc * idx)) ptr2 len
+        FMU.copyBytes (F.plusPtr (F.castPtr ptr1) (whc * idx)) ptr2 len
   return t
 
 writeImage :: forall p. I.Pixel p => Int -> Int -> Int -> p -> D.Tensor -> IO (I.Image p)
@@ -609,7 +610,7 @@ writeImage width height channel pixel tensor = do
       then throwIO $ userError $ "vector's length(" ++ show len ++ ") is not the same as tensor' one."
       else do
         F.withForeignPtr fptr $ \ptr2 -> do
-          BSI.memcpy (F.castPtr ptr2) (F.castPtr ptr1) len
+          FMU.copyBytes (F.castPtr ptr2) (F.castPtr ptr1) len
           return img
 
 writeBitmap :: FilePath -> D.Tensor -> IO ()
