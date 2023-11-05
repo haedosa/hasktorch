@@ -82,6 +82,8 @@
             hasktorch
             libtorch-ffi
             libtorch-ffi-helper
+            codegen
+            examples
           ];
           buildInputs =
             (with pkgs.haskellPackages;
