@@ -35,7 +35,7 @@ let
     //
     {
       libtorch-ffi =
-        hself.callCabal2nixWithOptions "libtorch-ffi" ../libtorch-ffi
+        hlib.dontHaddock (hself.callCabal2nixWithOptions "libtorch-ffi" ../libtorch-ffi
           (__concatStringsSep " " [
             (mk-flag-opt "rocm" false)
             (mk-flag-opt "cuda" cudaSupport)
@@ -44,12 +44,12 @@ let
           {
             inherit (libtorch-libs) torch c10 torch_cpu;
             ${if cudaSupport then "torch_cuda" else null} = libtorch-libs.torch_cuda;
-          };
+          });
     };
 
   overlay-setup-num-cores = hself: hsuper: {
     codegen      = setup-num-cores hsuper.codegen;
-    libtorch-ffi = setup-num-cores hsuper.libtorch-ffi;
+    libtorch-ffi = setup-num-cores (hlib.dontHaddock hsuper.libtorch-ffi);
     hasktorch    = setup-num-cores hsuper.hasktorch;
   };
 
@@ -61,7 +61,7 @@ let
           "--extra-include-dirs=${libtorch.dev}/include/torch/csrc/api/include"
           "--extra-lib-dirs=${libtorch.out}/lib"
         ]
-        hsuper.libtorch-ffi;
+        (hlib.dontHaddock hsuper.libtorch-ffi);
   };
 
 in overlay
