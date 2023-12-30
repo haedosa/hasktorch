@@ -180,6 +180,9 @@ cradle:
     - path: "hasktorch/bench/Alloc.hs"
       component: "hasktorch:bench:alloc"
 
+    - path: "hasktorch/app/tensor.hs"
+      component: "hasktorch:exe:tensor"
+
     - path: "libtorch-ffi/src"
       component: "lib:libtorch-ffi"
 

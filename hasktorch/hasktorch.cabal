@@ -274,3 +274,18 @@ benchmark alloc
     , libtorch-ffi
   default-language: Haskell2010
   ghc-options: -Wall -threaded -rtsopts
+
+
+executable tensor
+  build-depends:       hasktorch
+  hs-source-dirs:      app
+  build-depends:
+      base >=4.7 && <5
+    , hasktorch
+  main-is:             tensor.hs
+  default-language: Haskell2010
+  ghc-options:
+    -O2 -j
+    -rtsopts
+    -threaded
+    -feager-blackholing
