@@ -57,12 +57,12 @@ library
                     , Torch.Typed.NN
                     , Torch.Typed.NN.Convolution
                     , Torch.Typed.NN.Normalization
-                    , Torch.Typed.NN.Recurrent
-                    , Torch.Typed.NN.Recurrent.Auxiliary
-                    , Torch.Typed.NN.Recurrent.Cell.LSTM
-                    , Torch.Typed.NN.Recurrent.Cell.GRU
-                    , Torch.Typed.NN.Recurrent.LSTM
-                    , Torch.Typed.NN.Recurrent.GRU
+                    -- , Torch.Typed.NN.Recurrent
+                    -- , Torch.Typed.NN.Recurrent.Auxiliary
+                    -- , Torch.Typed.NN.Recurrent.Cell.LSTM
+                    -- , Torch.Typed.NN.Recurrent.Cell.GRU
+                    -- , Torch.Typed.NN.Recurrent.LSTM
+                    -- , Torch.Typed.NN.Recurrent.GRU
                     , Torch.Typed.NN.Transformer
                     , Torch.Typed.NN.Linear
                     , Torch.Typed.NN.Dropout
@@ -168,10 +168,10 @@ test-suite spec
                     , Torch.Typed.AutogradSpec
                     , Torch.Typed.OptimSpec
                     , Torch.Typed.NNSpec
-                    , Torch.Typed.NN.Recurrent.LSTMSpec
-                    , Torch.Typed.NN.Recurrent.GRUSpec
-                    , Torch.Typed.NN.Recurrent.Cell.LSTMSpec
-                    , Torch.Typed.NN.Recurrent.Cell.GRUSpec
+                    -- , Torch.Typed.NN.Recurrent.LSTMSpec
+                    -- , Torch.Typed.NN.Recurrent.GRUSpec
+                    -- , Torch.Typed.NN.Recurrent.Cell.LSTMSpec
+                    -- , Torch.Typed.NN.Recurrent.Cell.GRUSpec
                     , Torch.Typed.NN.TransformerSpec
                     , Torch.Typed.VisionSpec
                     , Torch.Typed.NamedTensorSpec

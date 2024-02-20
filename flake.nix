@@ -4,7 +4,7 @@
   inputs = {
 
     haedosa.url = "github:haedosa/flakes";
-    nixpkgs.follows = "haedosa/nixpkgs-23-05";
+    nixpkgs.follows = "haedosa/nixpkgs-23-11";
 
     tokenizers.url = github:hasktorch/tokenizers/9d25f0ba303193e97f8b22b9c93cbc84725886c3;
     tokenizers.flake = false;
@@ -46,7 +46,7 @@
 
       pkgs = import inputs.nixpkgs { inherit system; overlays = [ overlay ]; };
 
-      ghc-name = "ghc924";
+      ghc-name = "ghc948";
 
     in
 
@@ -77,7 +77,7 @@
         }) pkgs.hasktorchPkgs;
 
 
-        devShell.${system} = pkgs.haskellPackages.shellFor {
+        devShell.${system} = pkgs.haskell.packages.${ghc-name}.shellFor {
           packages = p: with p; [
             hasktorch
             libtorch-ffi

@@ -24,7 +24,7 @@ module Torch.Typed.NN
   ( module Torch.Typed.NN,
     module Torch.Typed.NN.Convolution,
     module Torch.Typed.NN.Normalization,
-    module Torch.Typed.NN.Recurrent,
+    -- module Torch.Typed.NN.Recurrent,
     module Torch.Typed.NN.Transformer,
     module Torch.Typed.NN.Linear,
     module Torch.Typed.NN.Dropout,
@@ -40,6 +40,6 @@ import Torch.Typed.NN.DataParallel
 import Torch.Typed.NN.Dropout
 import Torch.Typed.NN.Linear
 import Torch.Typed.NN.Normalization
-import Torch.Typed.NN.Recurrent
+-- import Torch.Typed.NN.Recurrent
 import Torch.Typed.NN.Sparse
 import Torch.Typed.NN.Transformer

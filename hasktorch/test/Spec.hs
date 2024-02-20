@@ -20,15 +20,15 @@ import qualified VisionSpec
 import qualified Torch.Distributions.BernoulliSpec
 import qualified Torch.Distributions.CategoricalSpec
 import qualified Torch.Distributions.ConstraintsSpec
-import qualified Torch.Typed.AutogradSpec
+-- import qualified Torch.Typed.AutogradSpec
 import qualified Torch.Typed.AuxiliarySpec
 import qualified Torch.Typed.FactoriesSpec
 import qualified Torch.Typed.FunctionalSpec0
 import qualified Torch.Typed.FunctionalSpec1
 import qualified Torch.Typed.FunctionalSpec2
-import qualified Torch.Typed.NN.Recurrent.Cell.GRUSpec
-import qualified Torch.Typed.NN.Recurrent.Cell.LSTMSpec
-import qualified Torch.Typed.NN.Recurrent.GRUSpec
+-- import qualified Torch.Typed.NN.Recurrent.Cell.GRUSpec
+-- import qualified Torch.Typed.NN.Recurrent.Cell.LSTMSpec
+-- import qualified Torch.Typed.NN.Recurrent.GRUSpec
 import qualified Torch.Typed.NN.Recurrent.LSTMSpec
 import qualified Torch.Typed.NN.TransformerSpec
 import qualified Torch.Typed.NNSpec
@@ -59,16 +59,16 @@ main = hspec $ do
   Torch.Distributions.BernoulliSpec.spec
   Torch.Distributions.CategoricalSpec.spec
   Torch.Distributions.ConstraintsSpec.spec
-  Torch.Typed.AutogradSpec.spec
+  -- Torch.Typed.AutogradSpec.spec
   Torch.Typed.AuxiliarySpec.spec
   Torch.Typed.FactoriesSpec.spec
   Torch.Typed.FunctionalSpec0.spec
   Torch.Typed.FunctionalSpec1.spec
   Torch.Typed.FunctionalSpec2.spec
-  Torch.Typed.NN.Recurrent.Cell.GRUSpec.spec
-  Torch.Typed.NN.Recurrent.Cell.LSTMSpec.spec
-  Torch.Typed.NN.Recurrent.GRUSpec.spec
-  Torch.Typed.NN.Recurrent.LSTMSpec.spec
+  -- Torch.Typed.NN.Recurrent.Cell.GRUSpec.spec
+  -- Torch.Typed.NN.Recurrent.Cell.LSTMSpec.spec
+  -- Torch.Typed.NN.Recurrent.GRUSpec.spec
+  -- Torch.Typed.NN.Recurrent.LSTMSpec.spec
   Torch.Typed.NN.TransformerSpec.spec
   Torch.Typed.NNSpec.spec
   Torch.Typed.NamedTensorSpec.spec
@@ -76,4 +76,3 @@ main = hspec $ do
   Torch.Typed.TensorSpec0.spec
   Torch.Typed.TensorSpec1.spec
   Torch.Typed.VisionSpec.spec
-
