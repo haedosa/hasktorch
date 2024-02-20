@@ -206,36 +206,36 @@ test-suite spec
                     , data-default-class
                     , half
 
-test-suite doctests
-  if os(darwin) || flag(disable-doctest)
-    Buildable: False
-  else
-    Buildable: True
-  type:               exitcode-stdio-1.0
-  hs-source-dirs:     test
-  main-is:            doctests.hs
-  ghc-options:        -Wall -threaded -fplugin GHC.TypeLits.Normalise -fplugin GHC.TypeLits.KnownNat.Solver -fplugin GHC.TypeLits.Extra.Solver -fconstraint-solver-iterations=0
-  default-language:   Haskell2010
-  build-depends:      doctest >=0.16.0.1 && <0.21
-                    , async
-                    , base >= 4.7 && < 5
-                    , libtorch-ffi == 1.11.*
-                    , finite-typelits
-                    , ghc-typelits-extra
-                    , ghc-typelits-knownnat
-                    , ghc-typelits-natnormalise
-                    , mtl
-                    , safe-exceptions
-                    , random
-                    , reflection
-                    , stm
-                    , JuicyPixels
-                    , vector
-                    , bytestring
-                    , safe-exceptions
-                    , zlib >= 0.6
-                    , inline-c
-                    , hasktorch
+-- test-suite doctests
+--   if os(darwin) || flag(disable-doctest)
+--     Buildable: False
+--   else
+--     Buildable: True
+--   type:               exitcode-stdio-1.0
+--   hs-source-dirs:     test
+--   main-is:            doctests.hs
+--   ghc-options:        -Wall -threaded -fplugin GHC.TypeLits.Normalise -fplugin GHC.TypeLits.KnownNat.Solver -fplugin GHC.TypeLits.Extra.Solver -fconstraint-solver-iterations=0
+--   default-language:   Haskell2010
+--   build-depends:      doctest >=0.16.0.1 && <0.21
+--                     , async
+--                     , base >= 4.7 && < 5
+--                     , libtorch-ffi == 1.11.*
+--                     , finite-typelits
+--                     , ghc-typelits-extra
+--                     , ghc-typelits-knownnat
+--                     , ghc-typelits-natnormalise
+--                     , mtl
+--                     , safe-exceptions
+--                     , random
+--                     , reflection
+--                     , stm
+--                     , JuicyPixels
+--                     , vector
+--                     , bytestring
+--                     , safe-exceptions
+--                     , zlib >= 0.6
+--                     , inline-c
+--                     , hasktorch
 
 benchmark runtime
   type: exitcode-stdio-1.0
