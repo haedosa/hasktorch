@@ -86,7 +86,7 @@
             examples
           ];
           buildInputs =
-            (with pkgs.haskellPackages;
+            (with pkgs.haskell.packages.${ghc-name};
               [ haskell-language-server
                 # threadscope
               ]) ++
