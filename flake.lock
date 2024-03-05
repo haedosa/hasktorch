@@ -161,23 +161,6 @@
         "type": "github"
       }
     },
-    "inline-c": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1666685398,
-        "narHash": "sha256-IXtwfTI9jzuHsOdvwNTTzeKjBnMZI9t1s8BBDu7QJEI=",
-        "owner": "fpco",
-        "repo": "inline-c",
-        "rev": "2d0fe9b2f0aa0e1aefc7bfed95a501e59486afb0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "fpco",
-        "repo": "inline-c",
-        "rev": "2d0fe9b2f0aa0e1aefc7bfed95a501e59486afb0",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1704290814,
@@ -277,7 +260,6 @@
     "root": {
       "inputs": {
         "haedosa": "haedosa",
-        "inline-c": "inline-c",
         "nixpkgs": [
           "haedosa",
           "nixpkgs-23-11"
