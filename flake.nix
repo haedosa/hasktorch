@@ -15,9 +15,6 @@
     type-errors-pretty.url = github:hasktorch/type-errors-pretty/32d7abec6a21c42a5f960d7f4133d604e8be79ec;
     type-errors-pretty.flake = false;
 
-    inline-c.url = github:fpco/inline-c/2d0fe9b2f0aa0e1aefc7bfed95a501e59486afb0;
-    inline-c.flake = false;
-
   };
 
 

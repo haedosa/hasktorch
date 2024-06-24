@@ -24,8 +24,6 @@ let
         tokenizers-haskell      = "${sources.tokenizers}/bindings/haskell/tokenizers-haskell";
         typelevel-rewrite-rules = sources.typelevel-rewrite-rules;
         type-errors-pretty      = sources.type-errors-pretty;
-        inline-c                = "${sources.inline-c}/inline-c";
-        inline-c-cpp            = "${sources.inline-c}/inline-c-cpp";
         codegen                 = ../codegen;
         libtorch-ffi-helper     = ../libtorch-ffi-helper;
         hasktorch               = ../hasktorch;
